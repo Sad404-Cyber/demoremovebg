@@ -560,7 +560,7 @@
     let currentProgress = 0;
     let progressTimer = null;
     
-    const animateProgress = (targetPercent, duration = 2000) => {
+    const animateProgress = (targetPercent, duration = 60) => {
       const circle = document.querySelector(".progress-ring__circle");
       const radius = circle.r.baseVal.value;
       const circumference = radius * 2 * Math.PI;
