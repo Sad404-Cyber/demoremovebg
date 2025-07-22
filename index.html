@@ -346,7 +346,7 @@
             or <span class="text-indigo-600 dark:text-indigo-400 font-semibold">browse</span> to upload
           </p>
           <p class="text-sm text-gray-400 dark:text-gray-500 mt-4">
-            File Yaqng Didukung PNG, JPG, WEBP • Maks 10MB
+            File Yang Didukung PNG, JPG, WEBP • Maks 10MB
           </p>
           <input
             id="fileInput"
@@ -440,9 +440,9 @@
         href="https://instagram.com/hfzzzabd"
         target="_blank"
         rel="noopener noreferrer"
-        class="glass-github rounded-full px-6 py-3 flex items-center gap-2 text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:scale-105 transform transition-all duration-200 shadow-md group"
+        class="glass-instagram rounded-full px-6 py-3 flex items-center gap-2 text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:scale-105 transform transition-all duration-200 shadow-md group"
       >
-        <i class="ph ph-github-logo text-xl text-gray-900 dark:text-gray-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400"></i>
+        <i class="ph ph-instagram-logo text-xl text-gray-900 dark:text-gray-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400"></i>
         <span class="font-semibold">Instagram Developer</span>
       </a>
     </div>
@@ -590,7 +590,7 @@
     const processImage = async (file) => {
       try {
         if (typeof removeBackground !== "function") {
-          throw new Error("Background removal function not available.");
+          throw new Error("Not FOund");
         }
 
         showSection("loader");
@@ -626,7 +626,7 @@
         showSection("result");
       } catch (err) {
         console.error(err);
-        alert("Failed to remove background. This may be due to an unsupported image format or a browser/device limitation. Please try converting your image to PNG or JPG, use a smaller image, or try a different browser/device.");
+        alert("Gagal menghapus latar belakang. Hal ini mungkin disebabkan oleh format gambar yang tidak didukung atau keterbatasan browser/perangkat. Coba konversi gambar Anda ke PNG atau JPG, gunakan gambar yang lebih kecil, atau coba browser/perangkat lain.");
         showSection("default");
       }
     };
