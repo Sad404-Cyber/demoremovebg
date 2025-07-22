@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found</title>
+  <meta name="description" content="404 - Page Not Found | Background Remover. The page you are looking for does not exist. Return to the AI-powered background removal tool.">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/favicon.svg">
+  <link rel="icon" type="image/svg+xml" sizes="32x32" href="public/favicon.svg">
+  <link rel="icon" type="image/svg+xml" sizes="16x16" href="public/favicon.svg">
+  <link rel="shortcut icon" href="public/favicon.svg">
+  <meta property="og:title" content="404 - Not Found | Background Remover">
+  <meta property="og:description" content="404 - Page Not Found | Background Remover. The page you are looking for does not exist. Return to the AI-powered background removal tool.">
+  <meta property="og:image" content="https://i.ibb.co/qYzGC0DW/og-img.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://drbaph.is-a.dev/RemoveBG/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="404 - Not Found | Background Remover">
+  <meta name="twitter:description" content="404 - Page Not Found | Background Remover. The page you are looking for does not exist. Return to the AI-powered background removal tool.">
+  <meta name="twitter:image" content="https://i.ibb.co/qYzGC0DW/og-img.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+
+  <style>
+    :root {
+      --primary: 99, 102, 241;
+      --secondary: 236, 72, 153;
+    }
+
+    * {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    /* Gradient backgrounds */
+    .gradient-bg {
+      background: linear-gradient(135deg, rgb(var(--primary)) 0%, rgb(var(--secondary)) 100%);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, rgb(var(--primary)) 0%, rgb(var(--secondary)) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Glass effect */
+    .glass {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .dark .glass {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: relative;
+      width: 60px;
+      height: 30px;
+      background: #d1d5db;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: background 0.3s;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .dark .theme-toggle {
+      background: #4b5563;
+    }
+
+    .theme-toggle-dot {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dark .theme-toggle-dot {
+      transform: translateX(30px);
+    }
+
+    /* Button hover effect */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+      z-index: -1;
+    }
+
+    .btn-primary:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Floating animation */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Glitch effect */
+    @keyframes glitch {
+      0%, 100% {
+        text-shadow: 
+          2px 2px 0 rgba(236, 72, 153, 0.5),
+          -2px -2px 0 rgba(99, 102, 241, 0.5);
+      }
+      25% {
+        text-shadow: 
+          -2px 2px 0 rgba(236, 72, 153, 0.5),
+          2px -2px 0 rgba(99, 102, 241, 0.5);
+      }
+      50% {
+        text-shadow: 
+          2px -2px 0 rgba(236, 72, 153, 0.5),
+          -2px 2px 0 rgba(99, 102, 241, 0.5);
+      }
+      75% {
+        text-shadow: 
+          -2px -2px 0 rgba(236, 72, 153, 0.5),
+          2px 2px 0 rgba(99, 102, 241, 0.5);
+      }
+    }
+
+    .glitch-text {
+      animation: glitch 2s infinite;
+    }
+
+    /* Responsive grid background */
+    .grid-bg {
+      background-image: 
+        linear-gradient(rgba(99, 102, 241, 0.01) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.01) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    .dark .grid-bg {
+      background-image: 
+        linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    }
+
+    /* Orbit animation */
+    @keyframes orbit {
+      0% {
+        transform: rotate(0deg) translateX(100px) rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg) translateX(100px) rotate(-360deg);
+      }
+    }
+
+    .orbit-1 {
+      animation: orbit 20s linear infinite;
+    }
+
+    .orbit-2 {
+      animation: orbit 30s linear infinite reverse;
+    }
+
+    .orbit-3 {
+      animation: orbit 25s linear infinite;
+      animation-delay: -10s;
+    }
+
+    @media (max-width: 640px) {
+      @keyframes orbit {
+        0% {
+          transform: rotate(0deg) translateX(60px) rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg) translateX(60px) rotate(-360deg);
+        }
+      }
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-900 min-h-screen grid-bg transition-all duration-300">
+  <!-- Theme Toggle -->
+  <div class="fixed top-4 right-4 z-50">
+    <div class="theme-toggle" id="themeToggle">
+      <div class="theme-toggle-dot">
+        <i class="ph-duotone ph-sun text-yellow-500 text-sm dark:hidden"></i>
+        <i class="ph-duotone ph-moon text-gray-400 text-sm hidden dark:block"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
+    <div class="w-full max-w-4xl">
+      <!-- 404 Animation Container -->
+      <div class="relative h-64 md:h-80 mb-8 md:mb-12">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h1 class="text-8xl md:text-9xl font-bold text-gray-200 dark:text-gray-800 select-none glitch-text">404</h1>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="relative w-32 h-32 md:w-40 md:h-40">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div class="orbit-1 absolute">
+                <i class="ph-duotone ph-planet text-3xl md:text-4xl text-indigo-500 float-animation"></i>
+              </div>
+              <div class="orbit-2 absolute">
+                <i class="ph-duotone ph-rocket text-2xl md:text-3xl text-pink-500 float-animation"></i>
+              </div>
+              <div class="orbit-3 absolute">
+                <i class="ph-duotone ph-star text-2xl md:text-3xl text-purple-500 float-animation"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Card -->
+      <div class="glass rounded-3xl p-6 md:p-10 shadow-2xl text-center">
+        <div class="mb-6">
+          <i class="ph-duotone ph-warning-circle text-6xl md:text-8xl gradient-text"></i>
+        </div>
+        
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+          Oops! Page Not Found
+        </h2>
+        
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+          Looks like you've ventured into uncharted space. The page you're looking for has drifted away into the digital void.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+          <a
+            href="https://drbaph.is-a.dev/RemoveBG"
+            class="btn-primary flex-1 gradient-bg text-white rounded-xl px-6 py-4 flex items-center justify-center gap-3 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+          >
+            <i class="ph-duotone ph-house text-xl"></i>
+            Back to Home
+          </a>
+          <button
+            onclick="window.history.back()"
+            class="flex-1 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl px-6 py-4 flex items-center justify-center gap-3 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 border border-gray-200 dark:border-gray-700"
+          >
+            <i class="ph-duotone ph-arrow-left text-xl"></i>
+            Go Back
+          </button>
+        </div>
+
+        <!-- Fun Message -->
+        <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            Error Code: <span class="font-mono text-indigo-600 dark:text-indigo-400">LOST_IN_SPACE</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme management
+    const initTheme = () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+    };
+
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+    });
+
+    initTheme();
+  </script>
+</body>
+</html>
